@@ -24,10 +24,16 @@ export class HomePage {
 
     this.camera.getPicture(options).then((imageData) => {
       this.ocr.recText(OCRSourceType.NORMFILEURL, imageData)
-        .then((res: OCRResult) => this.imageText = JSON.stringify(res))
-        .catch((error: any) => console.error(error));
+        .then((res: OCRResult) => {
+          this.imageText = JSON.stringify(res);
+          console.log(this.imageText);
+        }).catch((error: any) => console.error(error));
     }, (err) => {
       console.log(err);
     });
+  }
+
+  openDocument() {
+   
   }
 }
