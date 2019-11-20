@@ -1,5 +1,7 @@
 {
   "name": "passportscan",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
