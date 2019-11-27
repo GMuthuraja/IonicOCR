@@ -1,14 +1,19 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      OCR Reader
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-button (click)="openOCR()">OCR Scan</ion-button>
-  <ion-card>
-    {{imageText}}
-  </ion-card>
+  <ion-list *ngIf="resultText">
+    <ion-item *ngFor="let prop of resultProp">
+      <ion-label>
+        {{ prop }}
+      </ion-label>
+      {{ resultText[prop] }}
+    </ion-item>
+  </ion-list>
 </ion-content>
